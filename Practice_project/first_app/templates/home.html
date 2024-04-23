@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is first app Home page</h1>
+    
+    <h1>Name: {{ name }}</h1>
+    <h1>Age: {{ age }}</h1>
+    <h1>List: {{ List }}</h1>
+
+    <!-- Conditional Statement -->
+    {% if age >= 20 %}
+    <h4>You are Adult</h4>
+    {% elif age >= 10 and age <= 16 %}
+    <h4>You are Teenager</h4>
+    {% else %}
+    <h4>You are Child</h4>
+    {% endif %}
+
+
+    {% for i in courses %}
+    <h4>{{i.id}} : {{i.name}} {{i.fee}}</h4>
+    {% endfor %}
+
+
+    <!--Join filter-->
+    <h1>{{ val | join:" - " }} </h1>
+    <h1>{{ val | join:"  " }} </h1>
+    <h1>{{Date | join:" // "}}</h1>
+
+    <!--Date Filter-->
+    {{birthday | date:"Y-m-d"}}
+    {{birthday | date:"SHORT_DATE_FORMAT"}}
+
+    
+
+    <!--Add Filter-->
+    <h1>{{20 | add:"5"}}</h1>
+    
+    <!--Add slashes-->
+    {% comment %} {{ value | addslashes }} {% endcomment %}
+    <h1>{{ val | addslashes}}</h1>
+
+    <!--capfirst -->
+    <h1>{{Value | capfirst}}</h1>
+
+    <!--Cut Filter-->
+    <h2>{{Value | cut:" "}}</h2>
+    <h2>{{"January - February - March" | cut:"-"}}</h2>
+
+    <!--Dictsort Filter-->
+    <h4>{{ List_2 | dictsort:"name" }}</h4>
+
+    <!--First Filter-->
+    <h3>{{collection | first}}</h3>
+    <!--Last Filter-->
+    <h3>{{collection | last}}</h3>
+
+    <!--Length Filter-->
+    <h3>{{collection | length }}</h3>
+    <h3>{{ "Welcome" | length}}</h3>
+
+    <!--Linenumbers Filter-->
+   
+
+    
+</body>
+</html>
