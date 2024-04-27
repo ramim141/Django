@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    <style>
+        /* Additional CSS styles can be added here */
+    </style>
+{% endblock head %}
+
+{% block content %}
+
+<style>
+    body{
+        background: #fb8500;
+    }
+    .shef-image h1{
+       font-size: 50px;
+       font-family: 'Alfa Slab One', sans-serif; 
+       font-weight: bold; 
+       color: #f8edeb
+    }
+    .shef-image p{
+        font-size: 25px;
+    }
+   
+</style>
+<section class="shef-image">
+    <div class="row w-100 justify-content-center align-items-center py-4">
+        <img class="col-4 shef" src="{% static 'shef_new.png' %}" alt="chef" />
+        <div class="col-6">
+            <h1>Hello, I'm Ramim</h1>
+            <p>
+                As the chef and owner of RamisaFoods, I take pride in delivering an unparalleled culinary experience. With a commitment to freshness, I ensure that every dish is crafted with the finest ingredients, providing our customers with a taste of homemade goodness. Our menu is curated to offer wholesome, healthy options that cater to diverse palates, reflecting our dedication to quality and well-being.
+            </p>
+        </div>
+        
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="text-center text-success mt-5 ">All available foods</h1>
+<div class="container mt-5">
+  <div class="row">
+    {% for data in data %}
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card">
+        <img src="{{ data.strCategoryThumb }}" class="card-img-top" alt="{{ data.strCategory }}">
+        <div class="card-body">
+          <h2 class="card-title">{{ data.strCategory }}</h2>
+          <h5 class="card-title text-secondary ">Food Id: {{data.idCategory}}</h5>
+          <p class="card-text">
+            {{data.strCategoryDescription | truncatewords:15}}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

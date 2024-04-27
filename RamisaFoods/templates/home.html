@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap">
+{% endblock %}
+
+{% block content %}
+    <style>
+        .home-body {
+            background-image: url("{% static 'imag_2.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            display: flex;
+            justify-content: flex-end; 
+            align-items: center;
+        }
+        .description h1 {
+            text-align: right; /* Align the text to the right */
+        }
+        .description h1 {
+            font-size: 4.0em;
+            font-family: 'Alfa Slab One', sans-serif; 
+            font-weight: bold; 
+            color: yellow;
+        }
+        .description p{
+            font-size: 1.5em;
+            font-family: 'Alfa Slab One', sans-serif; 
+            color: white;
+            text-align: right;
+        }
+    </style>
+
+    <div class="home-body">
+        <div class="text-center me-5 description">
+            <h1>It is better than </h1>
+            <h1>an expensive cookery book</h1>
+            <p>"Embark on a flavorful journey with tantalizing tastes and savory delights."</p>
+        </div>
+    </div>
+{% endblock %}
