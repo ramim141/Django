@@ -23,18 +23,19 @@ def show_task(request):
     return render(request,'show_task.html',{'data':task})
 
 
-def edit_task(request,id):
+def edit_task(request, id):
+    task = get_object_or_404(Task, pk=id)
+    task_form = TaskForm(instance=task)
 
-    task = get_object_or_404(Task,pk=id)
-    if request.method =='POST':
-        form = TaskForm(request.POST, instance=task)
-        if form.is_valid():
-            form.save()
-            messages.success(request,'Task uploaded successfully')
+    if request.method == 'POST':
+        task_form = TaskForm(request.POST, instance=task)
+        if task_form.is_valid():
+            task_form.save()
+            messages.success(request, 'Task updated successfully')
             return redirect('show_task')
-    else:
-        form= TaskForm(instance=task)
-    return render(request,'edit_task.html',{'form':form})
+
+    return render(request, 'edit_task.html', {'form': task_form})
+
 
 def delete_task(request,id):
     task = get_object_or_404(Task,pk=id)
