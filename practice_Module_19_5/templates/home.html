@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   
+    <style>
+        #background-container {
+            background-image: url("{% static 'back.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            width: 100%;
+        }
+    </style>
+
+    <div class="container-fluid" id="background-container">
+        <div class="row">
+            <div class="col-12">
+               <!-- Content inside the background container -->
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
